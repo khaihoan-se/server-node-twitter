@@ -34,13 +34,13 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
   
-// const io = new Server(httpServer, {
-//     cors: {
-//       origin: `*`,
-//       methods: ['GET', 'POST'],
-//     },
-// });
-// socketHandlers(io);
+const io = new Server(httpServer, {
+    cors: {
+      origin: `*`,
+      methods: ['GET', 'POST'],
+    },
+});
+socketHandlers(io);
 
 app.use(
     cors({
