@@ -9,7 +9,7 @@ const { createServer } = require('http');
 const { Server } = require('socket.io');
 require('dotenv').config();
 
-const usersRoutes = require('./routes/users');
+const authRoutes = require('./routes/authRouter');
 
 const { socketHandlers } = require('./utils/socket');
 
@@ -50,7 +50,7 @@ app.use(
     })
 )
 
-app.use('/api/users', usersRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
     res.send('KhaiHoan Server is running')

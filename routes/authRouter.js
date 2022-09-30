@@ -9,10 +9,11 @@ const { fileUpload } = require('../middleware/file-upload');
 require('dotenv').config;
 const { CLIENT_URL } = process.env;
 
-const userCtrl = require('../controllers/users')
+const authCtrl = require('../controllers/authControllers')
 
 
-router.post('/signup', userCtrl.signup)
+router.post('/signup', authCtrl.signup)
+router.post('/login', authCtrl.login)
 
 
 module.exports = router;
